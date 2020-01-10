@@ -16,7 +16,7 @@ class Post(models.Model):
         self.save()
 
     def __str__(self):
-        return self.title, self.text
+        return self.title
 class Name(models.Model):
     nombre = models.CharField(max_length=30)
     edad = models.CharField(max_length=12)
