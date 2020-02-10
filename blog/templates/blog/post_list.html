@@ -1,21 +1,39 @@
-<html lang="en">
-    <head>
-        <title>Django Girls blog Jair</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">JAIR Erick</a></h1>
-        </div>
+{% load static %}
+<html lang="es">
 
-        <!-- {{ posts }}   -->
-        <!-- {% for post in posts %} {{ post }}{% endfor %} -->
-        {% for post in posts %}
-    <div>
-        <p>-----------------------------------------------------------------------</p>
-        <p> publicado: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+<head>
+    <title>Django Girls blog Jair</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+</head>
+
+<body>
+    <div class="page-header">
+        <h1><a href="/">ERICK JAIR</a></h1>
     </div>
-{% endfor %}
-    </body>
+
+    <!-- {{ posts }}   -->
+    <!-- {% for post in posts %} {{ post }}{% endfor %} -->
+    <div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>publicado: {{ post.published_date }}</p>
+                    </div>
+                    <h2><a href="">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+
 </html>
